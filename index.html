@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>
+            Learn Arduino
+        </h1>
+    </header>
+    <div class="container">
+        <div class="item" id="item1">
+            <ul id="navbar">
+                <a href="#home"><li>Arduino-Home</li></a>
+                <a href="#board"><li>Board Description</li></a>
+                <a href="#install"><li>Installation</li></a>
+                <a href="#prog"><li>Program Structure</li></a>
+                <a href="#data"><li>Data Types</li></a>
+                <a href="#var"><li>Variables & Constants</li></a>
+                <a href="#op"><li>Operators</li></a>
+                <a href="#con"><li>Control Statements</li></a>
+                <a href="#loop"><li>Loops</li></a>
+                <a href="#str"><li>Strings</li></a>
+                <a href="#str_obj"><li>String Objects</li></a>
+                <a href="#time"><li>Time</li></a>
+                <a href="#array"><li>Arrays</li></a>
+                <!-- <a href="" class = "buffer"><li></li></a>
+                <a href="" class = "buffer"><li></li></a> -->
+            </ul>
+        </div>
+        <div class="item" id="item2">
+            <section id="home">
+                <h2>Arduino Tutorial</h2>
+                <p>Arduino is a prototype platform (open-source) based on an easy-to-use hardware and software. It consists of a circuit board, which can be programed (referred to as a microcontroller) and a ready-made software called Arduino IDE (Integrated Development Environment), which is used to write and upload the computer code to the physical board.</p>
+                <p>Arduino provides a standard form factor that breaks the functions of the micro-controller into a more accessible package.</p>
+                <h2>Audience</h2>
+                <p>This tutorial is intended for enthusiastic students or hobbyists. With Arduino, one can get to know the basics of micro-controllers and sensors very quickly and can start building prototype with very little investment.</p>
+                <p>This tutorial is intended to make you comfortable in getting started with Arduino and its various functions.</p>
+                <h2>Prerequisites</h2>
+                <p>Before you start proceeding with this tutorial, we assume that you are already familiar with the basics of C and C++. If you are not well aware of these concepts, then we will suggest you go through our short tutorials on C and C++. A basic understanding of microcontrollers and electronics is also expected.</p>
+            </section>
+            <section id="board">
+                <h2>Board Description</h2>
+                <p>In this chapter, we will learn about the different components on the Arduino board. We will study the Arduino UNO board because it is the most popular board in the Arduino board family. In addition, it is the best board to get started with electronics and coding. Some boards look a bit different from the one given below, but most Arduinos have majority of these components in common.</p>
+                <h2>The Board Looks like</h2>
+                <img src="image/image2.jpg" alt="">
+            </section>
+            <section id="install">
+                <h2>Arduino - Installation</h2>
+                <p>After learning about the main parts of the Arduino UNO board, we are ready to learn how to set up the Arduino IDE. Once we learn this, we will be ready to upload our program on the Arduino board.In this section, we will learn in easy steps, how to set up the Arduino IDE on our computer and prepare the board to receive the program via USB cable.</p>
+                <ol>
+                    <li> First you must have your Arduino board (you can choose your favorite board) and a USB cable. In case you use Arduino UNO, Arduino Duemilanove, Nano, Arduino Mega 2560, or Diecimila, you will need a standard USB cable (A plug to B plug), the kind you would connect to a USB printer </li>
+                    <li>You can get different versions of Arduino IDE from the Download page on the Arduino Official website. You must select your software, which is compatible with your operating system (Windows, IOS, or Linux). After your file download is complete, unzip the file.</li>
+                    <li>The Arduino Uno, Mega, Duemilanove and Arduino Nano automatically draw power from either, the USB connection to the computer or an external power supply. If you are using an Arduino Diecimila, you have to make sure that the board is configured to draw power from the USB connection. The power source is selected with a jumper, a small piece of plastic that fits onto two of the three pins between the USB and power jacks. Check that it is on the two pins closest to the USB port.
+
+                    </li>
+                    <li>After your Arduino IDE software is downloaded, you need to unzip the folder. Inside the folder, you can find the application icon with an infinity label (application.exe). Double-click the icon to start the IDE.</li>
+                    <li>
+                        <p>Once the software starts, you have two options</p>
+                        <ul>
+                            <li>Create a New Project</li>
+                            <li>Open Exixting Project  Example</li>
+                        </ul>
+                        <p>To create a new project, select File -> New</p>
+                    </li>
+                    <li>To avoid any error while uploading your program to the board, you must select the correct Arduino board name, which matches with the board connected to your computer.
+                        <p>Go to Tools → Board and select your board.</p>
+                    </li>
+                    <li>Select the serial device of the Arduino board. Go to Tools → Serial Port menu. This is likely to be COM3 or higher (COM1 and COM2 are usually reserved for hardware serial ports). To find out, you can disconnect your Arduino board and re-open the menu, the entry that disappears should be of the Arduino board. Reconnect the board and select that serial port.</li>
+                    <li>Before explaining how we can upload our program to the board, we must demonstrate the function of each symbol appearing in the Arduino IDE toolbar.</li>
+                    <ol type="A">
+                        <li>Used to check if there is any compilation error.</li>
+                        <li>Used to upload a program to the Arduino board.</li>
+                        <li> Shortcut used to create a new sketch.</li>
+                        <li>Used to directly open one of the example sketch.</li>
+                        <li>Used to save your sketch.</li>
+                        <li>Serial monitor used to receive serial data from the board and send the serial data to the board</li>
+                    </ol>
+            </section>
+            <section id="prog">
+                <h2>Arduino-Program Structure</h2>
+                <p>In this chapter, we will study in depth, the Arduino program structure and we will learn more new terminologies used in the Arduino world. The Arduino software is open-source. The source code for the Java environment is released under the GPL and the C/C++ microcontroller libraries are under the LGPL.</p>
+                <h3>Structure</h3>
+                <p>Arduino programs can be divided in three main parts: Structure, Values (variables and constants), and Functions. In this tutorial, we will learn about the Arduino software program, step by step, and how we can write the program without any syntax or compilation error.</p>
+                <p>Let us start with the Structure. Software structure consist of two main functions −</p>
+                <ul>
+                    <li>Setup() Fucntion
+                    </li>
+                    <li>Loop() Fuction</li>
+                </ul>
+                <img src="image/image3.jpg" alt="">
+                <code>
+                    Void setup ( ) {
+
+                    }
+                </code>
+                <ul>
+                    <li>PURPOSE − The setup() function is called when a sketch starts. Use it to initialize the variables, pin modes, start using libraries, etc. The setup function will only run once, after each power up or reset of the Arduino board.</li>
+                    <li>INPUT--</li>
+                    <li>OUTPUT--</li>
+                    <li>RETURN--</li>
+                </ul>
+                <code>
+                    Void Loop ( ) {
+
+                    }
+                </code>
+                <ul>
+                    <li>PURPOSE − After creating a setup() function, which initializes and sets the initial values, the loop() function does precisely what its name suggests, and loops consecutively, allowing your program to change and respond. Use it to actively control the Arduino board.</li>
+                    <li>INPUT--</li>
+                    <li>OUTPUT--</li>
+                    <li>RETURN--</li>
+                </ul>
+            </section>
+            <section id="data">
+                <p>Data types in C refers to an extensive system used for declaring variables or functions of different types. The type of a variable determines how much space it occupies in the storage and how the bit pattern stored is interpreted.</p>
+                <table>
+                    <caption>The following table provides all the data types that you will use during Arduino programming.</caption>
+                    <tr>
+                        <td>void</td>
+                        <td>boolean</td>
+                        <td>char</td>
+                        <td>unsigned char</td>
+                        <td>byte</td>
+                        <td>int</td>
+                        <td>unsigned int</td>
+                        <td>word</td>
+                    </tr>
+                    <tr>
+                        <td>long</td>
+                        <td>unsigned long</td>
+                        <td>short</td>
+                        <td>float</td>
+                        <td>double</td>
+                        <td>array</td>
+                        <td>String-char array</td>
+                        <td>String-object</td>
+                    </tr>
+                </table>
+                <h3>void</h3>
+                <p>The void keyword is used only in function declarations. It indicates that the function is expected to return no information to the function from which it was called.</p>
+                <code>Void Loop ( ) {
+                    // rest of the code
+                 }</code>
+                 <h3>Boolean</h3>
+                 <p>A Boolean holds one of two values, true or false. Each Boolean variable occupies one byte of memory.
+                 </p>
+                 <code>boolean val = false ; // declaration of variable with type boolean and initialize it with false <br>
+                boolean state = true ; // declaration of variable with type boolean and initialize it with true</code>
+                <h3>Char</h3>
+                <p>A data type that takes up one byte of memory that stores a character value. Character literals are written in single quotes like this: 'A' and for multiple characters, strings use double quotes: "ABC".
+
+                </p>
+                <p>However, characters are stored as numbers. You can see the specific encoding in the ASCII chart. This means that it is possible to do arithmetic operations on characters, in which the ASCII value of the character is used. For example, 'A' + 1 has the value 66, since the ASCII value of the capital letter A is 65.</p>
+                <code>Char chr_a = ‘a’ ;//declaration of variable with type char and initialize it with character a <br>
+                Char chr_c = 97 ;//declaration of variable with type char and initialize it with character 97</code>
+                <img src="image/ascii.png" alt="">
+            </section>
+            <section id="var">
+                <p>Before we start explaining the variable types, a very important subject we need to make sure, you fully understand is called the variable scope.</p>
+                <h2>What is Variable Scope?</h2>
+                <p>Variables in C programming language, which Arduino uses, have a property called scope. A scope is a region of the program and there are three places where variables can be declared. They are −</p>
+                <ul>
+                    <li>Inside a function or a block, which is called local variables.</li>
+                    <li>In the definition of function parameters, which is called formal parameters.</li>
+                    <li>Outside of all functions, which is called global variables.</li>
+                </ul>
+                <h3>Local Variables</h3>
+                <p>Variables that are declared inside a function or block are local variables. They can be used only by the statements that are inside that function or block of code. Local variables are not known to function outside their own. Following is the example using local variables −</p>
+                <code><pre>
+                    Void setup () {
+
+                    }
+                    
+                    Void loop () {
+                       int x , y ;
+                       int z ; Local variable declaration
+                       x = 0;
+                       y = 0; actual initialization
+                       z = 10;
+                    }
+                </pre></code>
+                <h3>Global Variables</h3>
+                <p>Global variables are defined outside of all the functions, usually at the top of the program. The global variables will hold their value throughout the life-time of your program.</p>
+                <p>A global variable can be accessed by any function. That is, a global variable is available for use throughout your entire program after its declaration.</p>
+                <p>The following example uses global and local variables −</p>
+                <code>
+                    <pre>Int T , S ;
+                        float c = 0 ; Global variable declaration
+                        
+                        Void setup () {
+                        
+                        }
+                        
+                        Void loop () {
+                           int x , y ;
+                           int z ; Local variable declaration
+                           x = 0;
+                           y = 0; actual initialization
+                           z = 10;
+                        }</pre>
+                </code>
+
+            </section>
+            <section id="array">
+                <p>An array is a consecutive group of memory locations that are of the same type. To refer to a particular location or element in the array, we specify the name of the array and the position number of the particular element in the array.</p>
+                <p>The illustration given below shows an integer array called C that contains 11 elements. You refer to any one of these elements by giving the array name followed by the particular element’s position number in square brackets ([]). The position number is more formally called a subscript or index (this number specifies the number of elements from the beginning of the array). The first element has subscript 0 (zero) and is sometimes called the zeros element.</p>
+                <p>Thus, the elements of array C are C[0] (pronounced “C sub zero”), C[1], C[2] and so on. The highest subscript in array C is 10, which is 1 less than the number of elements in the array (11). Array names follow the same conventions as other variable names.</p>
+                <img src="image/array.jpg" alt="">
+                <p>A subscript must be an integer or integer expression (using any integral type). If a program uses an expression as a subscript, then the program evaluates the expression to determine the subscript. For example, if we assume that variable a is equal to 5 and that variable b is equal to 6, then the statement adds 2 to array element C[11].</p>
+                <p>Let us examine array C in the given figure, more closely. The name of the entire array is C. Its 11 elements are referred to as C[0] to C[10]. The value of C[0] is -45, the value of C[1] is 6, the value of C[2] is 0, the value of C[7] is 62, and the value of C[10] is 78.</p>
+                <p>To print the sum of the values contained in the first three elements of array C, we would write −</p>
+                <code>
+                    <pre>Serial.print (C[ 0 ] + C[ 1 ] + C[ 2 ] );</pre>
+                </code>
+                <p>To divide the value of C[6] by 2 and assign the result to the variable x, we would write −</p>
+                <code>
+                    <pre>x = C[ 6 ] / 2;</pre>
+                </code>
+                <h3>Declaring Array</h3>
+                <p>Arrays occupy space in memory. To specify the type of the elements and the number of elements required by an array, use a declaration of the form −</p>
+                <code>
+                    <pre>type arrayName [ arraySize ] ;</pre>
+                </code>
+                <p>The compiler reserves the appropriate amount of memory. (Recall that a declaration, which reserves memory is more properly known as a definition). The arraySize must be an integer constant greater than zero. For example, to tell the compiler to reserve 11 elements for integer array C, use the declaration −</p>
+                <code>
+                    <pre>int C[ 12 ]; // C is an array of 12 integers
+                    </pre>
+                </code>
+                <p><strong>Example usign Array</strong></p>
+                <code>
+                    <pre>int n[ 10 ] ; // n is an array of 10 integers
+
+                        void setup () {
+                        
+                        }
+                        
+                        void loop () {
+                           for ( int i = 0; i < 10; ++i ) // initialize elements of array n to 0 {
+                              n[ i ] = 0; // set element at location i to 0
+                              Serial.print (i) ;
+                              Serial.print (‘\r’) ;
+                           }
+                           for ( int j = 0; j < 10; ++j ) // output each array element's value {
+                              Serial.print (n[j]) ;
+                              Serial.print (‘\r’) ;
+                           } 
+                        }</pre>
+                </code>
+                <p><strong>Output</strong></p>
+                <code>
+                    <pre>
+                        <table>
+                            <tr>
+                                <td>Element</td>
+                                <td>Value</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </pre>
+                </code>
+
+            </section>
+        </div>
+    </div>
+</body>
+</html>
